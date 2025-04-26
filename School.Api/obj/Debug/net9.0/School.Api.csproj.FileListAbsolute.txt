@@ -178,3 +178,5 @@ E:\projects\Api\SchoolCleanArchitecture\School.Api\obj\Debug\net9.0\refint\Schoo
 E:\projects\Api\SchoolCleanArchitecture\School.Api\obj\Debug\net9.0\School.Api.pdb
 E:\projects\Api\SchoolCleanArchitecture\School.Api\obj\Debug\net9.0\School.Api.genruntimeconfig.cache
 E:\projects\Api\SchoolCleanArchitecture\School.Api\obj\Debug\net9.0\ref\School.Api.dll
+E:\projects\Api\SchoolCleanArchitecture\School.Api\bin\Debug\net9.0\FluentValidation.dll
+E:\projects\Api\SchoolCleanArchitecture\School.Api\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll

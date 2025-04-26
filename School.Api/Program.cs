@@ -1,9 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using School.Core;
+using School.Core.Middlewares;
 using School.Infra;
-using School.Infra.Abstracts;
 using School.Infra.Context;
-using School.Infra.Repositoires;
 using School.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +28,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.UseSwaggerUI(opt => opt.SwaggerEndpoint("/openAPI/v1.json", "v1"));
 }
+app.UseMiddleware<ErrorHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 

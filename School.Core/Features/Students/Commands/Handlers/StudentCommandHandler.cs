@@ -4,15 +4,10 @@ using School.Core.Bases;
 using School.Core.Features.Students.Commands.Models;
 using School.Data.Entities;
 using School.Service.Abstracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace School.Core.Features.Students.Commands.Handlers
 {
-    public class StudentCommandHandler : ResponseHandler,IRequestHandler<AddStudentCommand, Response<string>>
+    public class StudentCommandHandler : ResponseHandler, IRequestHandler<AddStudentCommand, Response<string>>
     {
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
@@ -39,5 +34,22 @@ namespace School.Core.Features.Students.Commands.Handlers
             else
                 return BadRequest<string>();
         }
+        public async Task<Response<string>> Handle(EditStudentCommand request, CancellationToken cancellationToken)
+        {
+            // Check if the student is existing
+            var student = await _studentService.GetStudentAsync(request.Id);
+
+            if (student == null)
+                return NotFound<string>();
+
+            var studMapper = _mapper.Map<Student>(request);
+
+            var result = await _studentService.EditAsync(studMapper);
+            if (result == "Success")
+                return Created("Edit Successfully");
+            else
+                return BadRequest<string>();
+        }
+
     }
 }

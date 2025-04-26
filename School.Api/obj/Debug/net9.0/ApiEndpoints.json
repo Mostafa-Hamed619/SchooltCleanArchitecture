@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "School.Api.Controllers.StudentController",
+    "Method": "EditStudent",
+    "RelativePath": "api/Student",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "School.Core.Features.Students.Commands.Models.EditStudentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School.Api.Controllers.StudentController",
     "Method": "GetStudent",
     "RelativePath": "api/Student/{id}",
     "HttpMethod": "GET",
@@ -27,6 +43,37 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School.Api.Controllers.StudentController",
+    "Method": "GetPaginatedStudent",
+    "RelativePath": "api/Student/PaginationStudent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderBy",
+        "Type": "System.String[]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

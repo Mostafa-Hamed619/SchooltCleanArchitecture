@@ -1,11 +1,4 @@
 ﻿using AutoMapper;
-using School.Core.Features.Students.Queries.Results;
-using School.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace School.Core.Mapping.Students
 {
@@ -16,6 +9,7 @@ namespace School.Core.Mapping.Students
             GetStudentByIdMapping();
             GetStudentListMapping();
             AddStudentCommandMapping();
+            EditStudentCommandMapping();
         }
     }
 }
